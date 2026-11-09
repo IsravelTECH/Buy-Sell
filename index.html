@@ -1,96 +1,17 @@
 <!DOCTYPE html>
-<html lang="en"><head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>BuySellUnplugged Login</title>
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<script>
-    tailwind.config = {
-      darkMode: "class",
-      theme: {
-        extend: {
-          colors: {
-            "primary": "#1877f2", // Facebook blue
-            "background-light": "#f0f2f5",
-            "background-dark": "#1c1e21",
-          },
-          fontFamily: {
-            "display": ["Plus Jakarta Sans"]
-          },
-          borderRadius: {
-            "DEFAULT": "6px",
-            "lg": "8px",
-            "xl": "12px",
-            "full": "9999px"
-          },
-        },
-      },
-    }
-  </script>
-<link href="https://fonts.googleapis.com" rel="preconnect"/>
-<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;700;800&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
-<style>
-    body {
-      min-height: max(884px, 100dvh);
-      background-color: #f0f2f5;
-    }
-    .dark body {
-      background-color: #1c1e21;
-    }
-  </style>
-<style>
-    body {
-      min-height: max(884px, 100dvh);
-    }
-  </style>
-<style>
-    body {
-      min-height: max(884px, 100dvh);
-    }
-  </style>
+<html lang="en" class="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%230084FF'><path d='M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5'/></svg>" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BuySellUnplugged • Mindful 3D Spatial Marketplace</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet" />
   </head>
-<body class="bg-background-light dark:bg-background-dark font-display text-slate-800 dark:text-slate-200">
-<div class="flex flex-col min-h-screen">
-<main class="flex-grow flex flex-col justify-center px-6 sm:px-8">
-<div class="w-full max-w-sm mx-auto">
-<div class="text-center mb-8">
-<h1 class="text-4xl font-bold text-primary dark:text-primary">BuySellUnplugged</h1>
-</div>
-<div class="bg-white dark:bg-background-dark shadow-lg rounded-lg p-6 space-y-3">
-<button class="w-full h-12 px-4 bg-primary text-white rounded-lg flex items-center justify-center font-bold text-base cursor-default pointer-events-none">
-  <span>Continue with Facebook</span>
-</button>
-<button class="w-full h-12 px-4 bg-white border border-slate-300 dark:border-slate-600 text-slate-700 dark:text-slate-200 rounded-lg flex items-center justify-center font-bold text-base gap-3 cursor-default pointer-events-none">
-  <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-    <path d="M21.9999 12.2273C21.9999 11.2364 21.909 10.4545 21.759 9.72727H12.2272V14.1545H17.7726C17.5681 15.4273 16.909 16.5 15.8908 17.2091V19.7818H19.2635C21.0544 18.1727 21.9999 15.4636 21.9999 12.2273Z" fill="#4285F4"></path>
-    <path d="M12.2272 22C14.909 22 17.1181 21.0909 18.7272 19.7818L15.8908 17.2091C14.9908 17.8091 13.7272 18.1636 12.2272 18.1636C9.53628 18.1636 7.24083 16.3455 6.42719 13.9182H2.92264V16.5727C4.54537 19.8273 8.13628 22 12.2272 22Z" fill="#34A853"></path>
-    <path d="M6.42727 13.9182C6.18182 13.2273 6.04545 12.4818 6.04545 11.7273C6.04545 10.9727 6.18182 10.2273 6.42727 9.53636V6.88182H2.92273C2.33182 8.09091 2 9.45455 2 11.7273C2 13.9909 2.33182 15.3545 2.92273 16.5636L6.42727 13.9182Z" fill="#FBBC05"></path>
-    <path d="M12.2272 5.29091C13.809 5.29091 15.0272 5.86364 15.5454 6.35455L18.7908 3.19091C17.1181 1.6 14.909 0.727273 12.2272 0.727273C8.13628 0.727273 4.54537 3.17273 2.92264 6.88182L6.42719 9.53636C7.24083 7.10909 9.53628 5.29091 12.2272 5.29091Z" fill="#EA4335"></path>
-  </svg>
-  <span>Continue with Google</span>
-</button>
-<button class="w-full h-12 px-4 bg-black text-white rounded-lg flex items-center justify-center font-bold text-base gap-2 cursor-default pointer-events-none">
-  <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-    <path d="M16.007 11.458C16.027 10.146 17.227 8.521 17.227 8.521C15.937 6.948 14.547 6.021 14.547 6.021C12.507 5.76 11.087 7.375 10.457 7.375C9.827 7.375 8.657 5.927 7.027 6.01C5.007 6.115 3.327 7.573 3.327 9.875C3.327 13.115 6.007 17.979 8.227 17.979C9.327 17.979 10.307 17.271 11.167 17.271C12.027 17.271 12.877 17.979 14.127 17.958C15.437 17.938 17.527 13.333 17.557 13.302C17.527 13.292 14.287 11.833 14.247 9.615C14.217 7.823 15.687 7.021 16.007 6.875C16.007 6.875 16.007 11.458 16.007 11.458Z"></path>
-  </svg>
-  <span>Sign in with Apple</span>
-</button>
-<div class="pt-2">
-<a 
-  href="Login_screen/email_login.html" 
-  class="w-full h-12 px-4 bg-[#e7f3ff] dark:bg-slate-700 text-primary dark:text-blue-400 rounded-lg flex items-center justify-center font-bold text-base transition-colors hover:bg-[#dbeaff] dark:hover:bg-slate-600">
-  <span>Login with Email / Phone</span>
-</a>
-
-</div>
-</div>
-</div>
-</main>
-<footer class="p-6 text-center">
-<p class="text-xs text-slate-500 dark:text-slate-400">Unlock Premium Shopping Experience: Search, Watchlist, Reminders &amp; More.</p>
-</footer>
-</div>
-
-</body></html>
+  <body class="bg-obsidian text-slate-100 font-sans selection:bg-electric selection:text-white antialiased overflow-x-hidden min-h-screen">
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
