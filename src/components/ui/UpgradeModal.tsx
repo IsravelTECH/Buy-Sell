@@ -83,7 +83,7 @@ export const UpgradeModal: React.FC<UpgradeModalProps> = ({
                   <div className="flex items-center gap-2">
                     <Award className="w-6 h-6 text-liquidGold" />
                     <span className="font-extrabold tracking-widest text-xs uppercase text-liquidGold">
-                      BuySell Visionary
+                      Buy&amp;Sell Visionary
                     </span>
                   </div>
                   <span className="text-[11px] font-mono px-2 py-0.5 rounded-full bg-liquidGold/20 text-liquidGold border border-liquidGold/40">

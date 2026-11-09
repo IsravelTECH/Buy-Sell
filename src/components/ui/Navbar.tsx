@@ -48,12 +48,12 @@ export const Navbar: React.FC<NavbarProps> = ({
         
         {/* Brand / Logo */}
         <div className="flex items-center gap-3">
-          <div className="w-9 h-9 rounded-2xl bg-gradient-to-tr from-electric to-blue-600 flex items-center justify-center shadow-lg shadow-electric/25">
-            <span className="text-white font-extrabold text-lg">U</span>
+          <div className="w-10 h-10 rounded-2xl overflow-hidden shadow-lg shadow-electric/25 border border-white/10 hover:scale-105 transition-transform flex items-center justify-center bg-obsidian-light">
+            <img src="/favicon.svg" alt="Buy&Sell" className="w-full h-full object-cover" />
           </div>
           <div>
-            <span className="font-extrabold text-base sm:text-lg tracking-tight text-white flex items-center gap-1.5">
-              BuySell<span className="text-electric">Unplugged</span>
+            <span className="font-extrabold text-base sm:text-lg tracking-tight text-white flex items-center gap-0.5">
+              Buy<span className="text-electric">&</span><span className="text-slate-100">Sell</span>
             </span>
             <span className="hidden sm:block text-[10px] font-mono text-slate-400 tracking-wider">
               MINDFUL 3D COMMERCE

@@ -55,7 +55,7 @@ export const AuthModal: React.FC<AuthModalProps> = ({
             <Sparkles className="w-6 h-6" />
           </div>
           <h3 className="text-2xl font-extrabold text-white tracking-tight">
-            {isRegistering ? 'Create Free Account' : 'Welcome to BuySellUnplugged'}
+            {isRegistering ? 'Create Free Account' : 'Welcome to Buy&Sell'}
           </h3>
           <p className="text-xs text-slate-400 mt-1">
             Mindful commerce with screen-time limits & 3D product inspection.

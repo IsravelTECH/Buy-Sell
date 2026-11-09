@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="none">
+  <defs>
+    <radialGradient id="bgGlow2" cx="50%" cy="30%" r="70%">
+      <stop offset="0%" stop-color="#182236"/>
+      <stop offset="60%" stop-color="#0E131E"/>
+      <stop offset="100%" stop-color="#08090C"/>
+    </radialGradient>
+    <linearGradient id="buyGrad2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#38A2FF"/>
+      <stop offset="50%" stop-color="#0084FF"/>
+      <stop offset="100%" stop-color="#0052CC"/>
+    </linearGradient>
+    <linearGradient id="sellGrad2" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#F59E0B"/>
+      <stop offset="50%" stop-color="#FFD700"/>
+      <stop offset="100%" stop-color="#FFF6D1"/>
+    </linearGradient>
+  </defs>
+
+  <rect x="16" y="16" width="480" height="480" rx="120" fill="url(#bgGlow2)" stroke="rgba(255, 255, 255, 0.12)" stroke-width="6"/>
+
+  <path d="M 160 256 C 160 180, 220 125, 305 125 C 360 125, 395 155, 410 195" 
+        stroke="url(#buyGrad2)" stroke-width="28" stroke-linecap="round" fill="none"/>
+  <polygon points="410,165 428,206 384,204" fill="url(#buyGrad2)"/>
+
+  <path d="M 352 256 C 352 332, 292 387, 207 387 C 152 387, 117 357, 102 317" 
+        stroke="url(#sellGrad2)" stroke-width="28" stroke-linecap="round" fill="none"/>
+  <polygon points="102,347 84,306 128,308" fill="url(#sellGrad2)"/>
+
+  <text x="256" y="296" 
+        font-family="'Plus Jakarta Sans', system-ui, -apple-system, sans-serif" 
+        font-size="148" 
+        font-weight="900" 
+        fill="#FFFFFF" 
+        text-anchor="middle"
+        letter-spacing="-4">
+    &amp;
+  </text>
+</svg>

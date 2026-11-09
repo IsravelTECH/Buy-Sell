@@ -245,7 +245,7 @@ export function App() {
               A Platform Engineered for People, Not Addiction
             </h3>
             <p className="text-xs sm:text-sm text-slate-400 leading-relaxed">
-              BuySellUnplugged does not use infinite algorithmic dopamine loops. You set your time budget, inspect genuine items with real-time 3D PBR accuracy, and directly negotiate peer-to-peer.
+              Buy&amp;Sell does not use infinite algorithmic dopamine loops. You set your time budget, inspect genuine items with real-time 3D PBR accuracy, and directly negotiate peer-to-peer.
             </p>
           </div>
         </section>
@@ -253,7 +253,7 @@ export function App() {
 
       {/* Footer */}
       <footer className="relative z-10 border-t border-white/10 py-6 px-4 text-center text-xs text-slate-500">
-        <p>© 2026 BuySellUnplugged • High-Fidelity 3D Spatial E-Commerce</p>
+        <p>© 2026 Buy&amp;Sell • High-Fidelity 3D Spatial E-Commerce</p>
       </footer>
 
       {/* 3D Product Inspector Modal */}

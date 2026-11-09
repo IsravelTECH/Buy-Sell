@@ -24,7 +24,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
       {/* Top Innovation Badge */}
       <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/5 border border-white/10 text-xs text-slate-300 backdrop-blur-md mb-4 shadow-sm hover:border-electric/40 transition-colors cursor-pointer">
         <Sparkles className="w-3.5 h-3.5 text-electric animate-spin" style={{ animationDuration: '6s' }} />
-        <span>BuySellUnplugged 2.0 • 3D Spatial Commerce Engine</span>
+        <span>Buy&amp;Sell 2.0 • 3D Spatial Commerce Engine</span>
         <span className="w-1.5 h-1.5 rounded-full bg-aurora animate-pulse" />
       </div>
 
