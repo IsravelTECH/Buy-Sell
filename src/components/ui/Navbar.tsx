@@ -78,19 +78,10 @@ export const Navbar: React.FC<NavbarProps> = ({
         {/* Right Navigation Controls */}
         <div className="flex items-center gap-1.5 sm:gap-2.5">
           
-          {/* Mobile Search Button */}
-          <button
-            onClick={onOpenSearch}
-            className="md:hidden p-2 rounded-xl bg-white/5 hover:bg-white/10 text-slate-300 border border-white/10"
-            title="Search"
-          >
-            <Search className="w-4 h-4" />
-          </button>
-
           {/* Mindful Focus HUD Counter */}
           <button
             onClick={onOpenFocus}
-            className={`flex items-center gap-1.5 px-3 py-1.5 rounded-xl border text-xs font-mono font-bold transition-all ${
+            className={`flex items-center gap-1.5 px-2.5 sm:px-3 py-1.5 rounded-xl border text-xs font-mono font-bold transition-all ${
               isLimitApproaching
                 ? 'bg-amber-500/20 border-amber-500/40 text-amber-300 animate-pulse'
                 : 'bg-white/5 border-white/10 hover:border-electric/40 text-slate-300 hover:text-white'
@@ -101,14 +92,14 @@ export const Navbar: React.FC<NavbarProps> = ({
             <span>{formatElapsed(sessionElapsedSeconds)}</span>
           </button>
 
-          {/* Watchlist Trigger */}
+          {/* Watchlist Trigger (Desktop) */}
           <button
             onClick={onOpenWatchlist}
-            className="relative p-2 sm:px-3 sm:py-1.5 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 text-slate-300 hover:text-white transition-all flex items-center gap-1.5 text-xs font-semibold"
+            className="hidden sm:flex relative p-2 sm:px-3 sm:py-1.5 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 text-slate-300 hover:text-white transition-all items-center gap-1.5 text-xs font-semibold"
             title="Saved Watchlist"
           >
             <Tag className="w-4 h-4 text-liquidGold" />
-            <span className="hidden sm:inline">Watchlist</span>
+            <span>Watchlist</span>
             {watchlistCount > 0 && (
               <span className="px-1.5 py-0.2 rounded-full bg-liquidGold text-black font-extrabold text-[10px]">
                 {watchlistCount}
@@ -116,10 +107,10 @@ export const Navbar: React.FC<NavbarProps> = ({
             )}
           </button>
 
-          {/* Reminders / Radar Trigger (Pro) */}
+          {/* Reminders / Radar Trigger (Desktop) */}
           <button
             onClick={user.type === 'premium' ? onOpenReminders : onOpenUpgrade}
-            className="relative p-2 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 text-slate-300 hover:text-white transition-all"
+            className="hidden sm:flex relative p-2 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 text-slate-300 hover:text-white transition-all"
             title={user.type === 'premium' ? "Price Radars" : "Unlock Deal Radars"}
           >
             <Bell className="w-4 h-4 text-electric" />
@@ -131,7 +122,7 @@ export const Navbar: React.FC<NavbarProps> = ({
           {/* Fast Role / Tier Switcher Pill */}
           <button
             onClick={onToggleTier}
-            className={`px-3 py-1.5 rounded-xl text-xs font-extrabold transition-all flex items-center gap-1.5 border shadow-sm ${
+            className={`px-2.5 sm:px-3 py-1.5 rounded-xl text-xs font-extrabold transition-all flex items-center gap-1.5 border shadow-sm ${
               user.type === 'premium'
                 ? 'bg-liquidGold/20 border-liquidGold/40 text-liquidGold shadow-liquidGold/10'
                 : 'bg-white/5 border-white/10 text-slate-300 hover:text-white'
@@ -139,8 +130,8 @@ export const Navbar: React.FC<NavbarProps> = ({
             title="Click to toggle between Free and Pro Tier for demo"
           >
             <Award className="w-3.5 h-3.5" />
-            <span className="uppercase tracking-wider text-[11px]">
-              {user.type === 'premium' ? 'Pro Member' : 'Free Mode'}
+            <span className="uppercase tracking-wider text-[10px] sm:text-[11px]">
+              {user.type === 'premium' ? 'Pro' : 'Free'}
             </span>
           </button>
 

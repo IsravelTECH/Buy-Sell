@@ -63,19 +63,19 @@ export const ProductCard: React.FC<ProductCardProps> = ({
         transform: `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) ${isHovered ? 'scale3d(1.025, 1.025, 1.025)' : 'scale3d(1, 1, 1)'}`,
         transition: isHovered ? 'transform 0.08s ease-out' : 'transform 0.5s cubic-bezier(0.2, 0.8, 0.2, 1)',
       }}
-      className="relative rounded-3xl glass-panel p-3.5 sm:p-4 overflow-hidden group cursor-pointer border border-white/10 hover:border-electric/40 hover:shadow-2xl hover:shadow-electric/15"
+      className="relative rounded-2xl sm:rounded-3xl glass-panel p-2.5 sm:p-4 overflow-hidden group cursor-pointer border border-white/10 hover:border-electric/40 hover:shadow-2xl hover:shadow-electric/15"
       onClick={() => onSelect(product)}
     >
       {/* Dynamic Specular Light Sheen */}
       <div
-        className="pointer-events-none absolute -inset-px opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-3xl z-10"
+        className="pointer-events-none absolute -inset-px opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl sm:rounded-3xl z-10"
         style={{
           background: `radial-gradient(circle 260px at ${sheenPosition.x}% ${sheenPosition.y}%, rgba(255, 255, 255, 0.12), transparent 70%)`,
         }}
       />
 
       {/* Image Container with 3D Badge */}
-      <div className="relative aspect-square w-full rounded-2xl overflow-hidden bg-obsidian-light mb-3">
+      <div className="relative aspect-square w-full rounded-xl sm:rounded-2xl overflow-hidden bg-obsidian-light mb-2 sm:mb-3">
         <img
           src={product.image}
           alt={product.title}
@@ -83,9 +83,9 @@ export const ProductCard: React.FC<ProductCardProps> = ({
         />
 
         {/* Live 3D Badge */}
-        <div className="absolute top-3 left-3 flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-semibold bg-black/60 backdrop-blur-md text-white border border-white/10">
-          <Box className="w-3.5 h-3.5 text-electric animate-spin" style={{ animationDuration: '8s' }} />
-          <span>3D Mesh</span>
+        <div className="absolute top-2 left-2 sm:top-3 sm:left-3 flex items-center gap-1 sm:gap-1.5 px-2 sm:px-2.5 py-0.5 sm:py-1 rounded-full text-[10px] sm:text-xs font-semibold bg-black/60 backdrop-blur-md text-white border border-white/10">
+          <Box className="w-3 h-3 sm:w-3.5 sm:h-3.5 text-electric animate-spin" style={{ animationDuration: '8s' }} />
+          <span>3D</span>
         </div>
 
         {/* Watchlist Toggle */}
@@ -94,59 +94,59 @@ export const ProductCard: React.FC<ProductCardProps> = ({
             e.stopPropagation();
             onToggleWatchlist(product);
           }}
-          className={`absolute top-3 right-3 p-2 rounded-full backdrop-blur-md transition-all duration-200 z-20 ${
+          className={`absolute top-2 right-2 sm:top-3 sm:right-3 p-1.5 sm:p-2 rounded-full backdrop-blur-md transition-all duration-200 z-20 ${
             isWatchlisted
               ? 'bg-liquidGold text-black shadow-lg shadow-liquidGold/40 scale-105'
               : 'bg-black/50 text-white hover:bg-black/80 hover:text-liquidGold border border-white/10'
           }`}
           title="Save to Watchlist"
         >
-          <Tag className="w-4 h-4" />
+          <Tag className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
         </button>
 
         {/* Condition tag */}
-        <div className="absolute bottom-3 left-3 px-2 py-0.5 rounded-lg text-[11px] font-medium bg-black/60 backdrop-blur-md text-slate-300 border border-white/10">
+        <div className="absolute bottom-2 left-2 sm:bottom-3 sm:left-3 px-1.5 py-0.5 rounded-md text-[10px] sm:text-[11px] font-medium bg-black/60 backdrop-blur-md text-slate-300 border border-white/10 truncate max-w-[80%]">
           {product.condition}
         </div>
       </div>
 
       {/* Product Metadata */}
-      <div className="space-y-1.5">
-        <div className="flex items-baseline justify-between">
-          <div className="flex items-baseline gap-2">
-            <span className="text-xl sm:text-2xl font-extrabold text-white tracking-tight">
+      <div className="space-y-1">
+        <div className="flex items-baseline justify-between gap-1">
+          <div className="flex items-baseline gap-1 sm:gap-2">
+            <span className="text-base sm:text-2xl font-extrabold text-white tracking-tight">
               ${product.price}
             </span>
-            <span className="text-xs line-through text-slate-500 font-mono">
+            <span className="text-[10px] sm:text-xs line-through text-slate-500 font-mono">
               ${product.originalPrice}
             </span>
           </div>
-          <span className="text-[11px] font-semibold text-aurora bg-emerald-500/10 px-2 py-0.5 rounded-full border border-emerald-500/20">
+          <span className="text-[9px] sm:text-[11px] font-semibold text-aurora bg-emerald-500/10 px-1.5 sm:px-2 py-0.2 sm:py-0.5 rounded-full border border-emerald-500/20 truncate">
             {product.dealRating}
           </span>
         </div>
 
-        <h3 className="text-sm font-semibold text-slate-100 line-clamp-1 group-hover:text-electric transition-colors">
+        <h3 className="text-xs sm:text-sm font-semibold text-slate-100 line-clamp-1 group-hover:text-electric transition-colors">
           {product.title}
         </h3>
 
-        <div className="flex items-center justify-between text-xs text-slate-400 pt-1 border-t border-white/5">
-          <span className="truncate">{product.location}</span>
+        <div className="flex items-center justify-between text-[10px] sm:text-xs text-slate-400 pt-1 border-t border-white/5">
+          <span className="truncate max-w-[65%]">{product.location.split('·')[0]}</span>
           <span className="font-mono text-slate-500">{product.timeAgo}</span>
         </div>
       </div>
 
       {/* Interactive Quick-Action Drawer on Hover */}
-      <div className="mt-3 pt-2 flex items-center justify-between gap-2">
+      <div className="mt-2 sm:mt-3 pt-1.5 sm:pt-2 flex items-center justify-between gap-1.5 sm:gap-2">
         <button
           onClick={(e) => {
             e.stopPropagation();
             onSelect(product);
           }}
-          className="flex-1 py-2 px-3 rounded-xl text-xs font-bold bg-white/5 hover:bg-electric hover:text-white text-slate-300 transition-all border border-white/10 flex items-center justify-center gap-1.5"
+          className="flex-1 py-1.5 sm:py-2 px-2 sm:px-3 rounded-lg sm:rounded-xl text-[11px] sm:text-xs font-bold bg-white/5 hover:bg-electric hover:text-white text-slate-300 transition-all border border-white/10 flex items-center justify-center gap-1 sm:gap-1.5"
         >
-          <Sparkles className="w-3.5 h-3.5" />
-          <span>Inspect 3D</span>
+          <Sparkles className="w-3 h-3 sm:w-3.5 sm:h-3.5" />
+          <span>Inspect</span>
         </button>
 
         <button
@@ -158,14 +158,14 @@ export const ProductCard: React.FC<ProductCardProps> = ({
               onTriggerUpgrade();
             }
           }}
-          className={`p-2 rounded-xl text-xs border transition-all ${
+          className={`p-1.5 sm:p-2 rounded-lg sm:rounded-xl text-xs border transition-all ${
             isPremium
               ? 'bg-white/5 border-white/10 hover:border-electric/40 text-slate-300 hover:text-white'
               : 'bg-liquidGold/10 border-liquidGold/30 text-liquidGold hover:bg-liquidGold/20'
           }`}
           title={isPremium ? "Set Deal Alert" : "Unlock Deal Alerts (Premium)"}
         >
-          <Sparkles className="w-4 h-4" />
+          <Sparkles className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
         </button>
       </div>
     </div>

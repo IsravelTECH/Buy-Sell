@@ -48,7 +48,7 @@ export const UpgradeModal: React.FC<UpgradeModalProps> = ({
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-6 bg-black/85 backdrop-blur-2xl animate-fadeIn">
-      <div className="relative w-full max-w-4xl glass-panel-elevated rounded-3xl p-6 sm:p-10 border border-liquidGold/30 shadow-2xl overflow-hidden">
+      <div className="relative w-full max-w-4xl max-h-[90vh] overflow-y-auto glass-panel-elevated rounded-3xl p-5 sm:p-10 border border-liquidGold/30 shadow-2xl">
         
         {/* Close Button */}
         <button

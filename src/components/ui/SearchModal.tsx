@@ -33,8 +33,8 @@ export const SearchModal: React.FC<SearchModalProps> = ({
   });
 
   return (
-    <div className="fixed inset-0 z-50 flex items-start justify-center p-3 sm:p-6 pt-16 sm:pt-24 bg-black/80 backdrop-blur-xl animate-fadeIn">
-      <div className="relative w-full max-w-2xl glass-panel-elevated rounded-3xl p-5 sm:p-6 border border-white/15 shadow-2xl flex flex-col max-h-[80vh]">
+    <div className="fixed inset-0 z-50 flex items-start justify-center p-2.5 sm:p-6 pt-8 sm:pt-24 bg-black/80 backdrop-blur-xl animate-fadeIn">
+      <div className="relative w-full max-w-2xl glass-panel-elevated rounded-3xl p-4 sm:p-6 border border-white/15 shadow-2xl flex flex-col max-h-[88vh]">
         
         {/* Header Search Bar */}
         <div className="relative flex items-center mb-4">

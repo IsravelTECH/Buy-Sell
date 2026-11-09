@@ -11,6 +11,7 @@ import { ReminderModal, ReminderItem } from './components/ui/ReminderModal';
 import { WatchlistDrawer } from './components/ui/WatchlistDrawer';
 import { UpgradeModal } from './components/ui/UpgradeModal';
 import { AuthModal } from './components/ui/AuthModal';
+import { MobileBottomNav } from './components/ui/MobileBottomNav';
 import { Sparkles, ShieldCheck, HeartHandshake, Zap, BellRing } from 'lucide-react';
 
 export function App() {
@@ -191,7 +192,7 @@ export function App() {
       />
 
       {/* Main Content Area */}
-      <main className="flex-1 relative z-10 max-w-7xl mx-auto w-full px-3 sm:px-8 pb-20">
+      <main className="flex-1 relative z-10 max-w-7xl mx-auto w-full px-3 sm:px-8 pb-28 sm:pb-16">
         
         {/* Spatial 3D Hero Section */}
         <HeroSection
@@ -220,7 +221,7 @@ export function App() {
             </div>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6">
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-6">
             {filteredProducts.map((product) => (
               <ProductCard
                 key={product.id}
@@ -329,6 +330,18 @@ export function App() {
         isOpen={isAuthOpen}
         onClose={() => setIsAuthOpen(false)}
         onLogin={(newUser) => setUser(newUser)}
+      />
+
+      {/* Floating Mobile Bottom Navigation Dock */}
+      <MobileBottomNav
+        onOpenSearch={() => setIsSearchOpen(true)}
+        onOpenFocus={() => setIsFocusDrawerOpen(true)}
+        onOpenWatchlist={() => setIsWatchlistOpen(true)}
+        onOpenUpgrade={() => setIsUpgradeOpen(true)}
+        onScrollToTop={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+        watchlistCount={watchlist.length}
+        isPremium={user.type === 'premium'}
+        sessionElapsedSeconds={sessionElapsedSeconds}
       />
     </div>
   );

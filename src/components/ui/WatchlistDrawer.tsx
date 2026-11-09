@@ -23,7 +23,7 @@ export const WatchlistDrawer: React.FC<WatchlistDrawerProps> = ({
 
   return (
     <div className="fixed inset-0 z-50 flex justify-end bg-black/80 backdrop-blur-xl animate-fadeIn">
-      <div className="w-full max-w-md h-full glass-panel-elevated p-6 flex flex-col justify-between border-l border-white/10 shadow-2xl">
+      <div className="w-full max-w-md h-full glass-panel-elevated p-4 sm:p-6 flex flex-col justify-between border-l border-white/10 shadow-2xl">
         
         <div>
           {/* Header */}

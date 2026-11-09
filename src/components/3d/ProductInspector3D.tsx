@@ -186,35 +186,57 @@ export const ProductInspector3D: React.FC<ProductInspector3DProps> = ({
     rimLight.position.set(0, 6, -6);
     lightsGroup.add(rimLight);
 
-    // Mouse Drag Controls
+    // Touch & Mouse Drag Controls
     let isDragging = false;
     let prevMouseX = 0;
     let prevMouseY = 0;
 
-    const onPointerDown = (e: MouseEvent) => {
+    const onPointerDown = (clientX: number, clientY: number) => {
       isDragging = true;
-      prevMouseX = e.clientX;
-      prevMouseY = e.clientY;
+      prevMouseX = clientX;
+      prevMouseY = clientY;
     };
 
-    const onPointerMove = (e: MouseEvent) => {
+    const onPointerMove = (clientX: number, clientY: number) => {
       if (!isDragging || !meshGroupRef.current) return;
-      const deltaX = e.clientX - prevMouseX;
-      const deltaY = e.clientY - prevMouseY;
+      const deltaX = clientX - prevMouseX;
+      const deltaY = clientY - prevMouseY;
       meshGroupRef.current.rotation.y += deltaX * 0.01;
       meshGroupRef.current.rotation.x += deltaY * 0.01;
-      prevMouseX = e.clientX;
-      prevMouseY = e.clientY;
+      prevMouseX = clientX;
+      prevMouseY = clientY;
     };
 
     const onPointerUp = () => {
       isDragging = false;
     };
 
+    const handleMouseDown = (e: MouseEvent) => onPointerDown(e.clientX, e.clientY);
+    const handleMouseMove = (e: MouseEvent) => onPointerMove(e.clientX, e.clientY);
+    const handleMouseUp = () => onPointerUp();
+
+    const handleTouchStart = (e: TouchEvent) => {
+      if (e.touches.length > 0) {
+        onPointerDown(e.touches[0].clientX, e.touches[0].clientY);
+      }
+    };
+    const handleTouchMove = (e: TouchEvent) => {
+      if (e.touches.length > 0) {
+        onPointerMove(e.touches[0].clientX, e.touches[0].clientY);
+      }
+    };
+    const handleTouchEnd = () => onPointerUp();
+
     const domElement = renderer.domElement;
-    domElement.addEventListener('mousedown', onPointerDown);
-    window.addEventListener('mousemove', onPointerMove);
-    window.addEventListener('mouseup', onPointerUp);
+    domElement.style.touchAction = 'none';
+
+    domElement.addEventListener('mousedown', handleMouseDown);
+    window.addEventListener('mousemove', handleMouseMove);
+    window.addEventListener('mouseup', handleMouseUp);
+
+    domElement.addEventListener('touchstart', handleTouchStart, { passive: true });
+    window.addEventListener('touchmove', handleTouchMove, { passive: true });
+    window.addEventListener('touchend', handleTouchEnd);
 
     // Animation Loop
     let reqId: number;
@@ -239,9 +261,12 @@ export const ProductInspector3D: React.FC<ProductInspector3DProps> = ({
 
     return () => {
       cancelAnimationFrame(reqId);
-      domElement.removeEventListener('mousedown', onPointerDown);
-      window.removeEventListener('mousemove', onPointerMove);
-      window.removeEventListener('mouseup', onPointerUp);
+      domElement.removeEventListener('mousedown', handleMouseDown);
+      window.removeEventListener('mousemove', handleMouseMove);
+      window.removeEventListener('mouseup', handleMouseUp);
+      domElement.removeEventListener('touchstart', handleTouchStart);
+      window.removeEventListener('touchmove', handleTouchMove);
+      window.removeEventListener('touchend', handleTouchEnd);
       window.removeEventListener('resize', handleResize);
       if (mountRef.current && domElement) {
         mountRef.current.removeChild(domElement);

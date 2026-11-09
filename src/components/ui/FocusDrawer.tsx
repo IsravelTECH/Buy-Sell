@@ -43,7 +43,7 @@ export const FocusDrawer: React.FC<FocusDrawerProps> = ({
 
   return (
     <div className="fixed inset-0 z-50 flex items-end sm:items-center justify-center p-0 sm:p-4 bg-black/80 backdrop-blur-xl animate-fadeIn">
-      <div className="relative w-full max-w-lg glass-panel-elevated rounded-t-3xl sm:rounded-3xl p-6 sm:p-8 border border-white/15 shadow-2xl">
+      <div className="relative w-full max-w-lg max-h-[92vh] overflow-y-auto glass-panel-elevated rounded-t-3xl sm:rounded-3xl p-5 sm:p-8 border border-white/15 shadow-2xl">
         
         {/* Top Handle on Mobile */}
         <div className="flex justify-center -mt-2 mb-4 sm:hidden">
